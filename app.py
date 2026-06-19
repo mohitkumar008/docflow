@@ -109,7 +109,7 @@ with st.sidebar:
         "Output formats", ["Markdown (.md)", "Plain text (.txt)", "HTML (.html)"],
         default=["Markdown (.md)"]
     )
-    max_size_mb = st.slider("Max file size (MB)", 1, 100, 25)
+    max_size_mb = st.slider("Max file size (MB)", 1, 200, 25)
 
     st.markdown("---")
     st.markdown("### 🕓 Session history")
@@ -121,13 +121,6 @@ with st.sidebar:
             st.rerun()
     else:
         st.caption("No conversions yet this session.")
-
-    st.markdown("---")
-    st.markdown("### 🔌 API mode")
-    st.caption(
-        "Run the included `api.py` (FastAPI) to convert files programmatically:\n\n"
-        "`POST /convert` with a file → returns Markdown JSON."
-    )
 
 # ============================================================
 # HERO / LANDING SECTION
@@ -343,4 +336,4 @@ with tab_url:
                     st.error(f"Could not convert that URL: {e}")
 
 st.divider()
-st.caption("Built with MarkItDown + Streamlit · DocFlow turns any document into clean Markdown, ready for humans or AI.")
+st.caption("Built by <strong>Mohit Kumar</strong>. DocFlow turns any document into clean Markdown, ready for humans or AI.", unsafe_allow_html=True)
